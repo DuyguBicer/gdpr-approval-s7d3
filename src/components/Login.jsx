@@ -66,14 +66,21 @@ export default function Login() {
       </FormGroup>
 
       <FormGroup check>
-        <Input type="checkbox" id="terms" name="terms" checked={form.terms} />
+
+        <Input 
+        type="checkbox" 
+        id="terms" 
+        name="terms" 
+        checked={form.terms}   
+        onChange={handleChange} />
+
         <Label htmlFor="terms" check>
-          Check me out
+           I agree to terms of service and privacy policy
         </Label>
       </FormGroup>
 
       <FormGroup className="text-center p-4">
-        <Button color="primary">Sign In</Button>
+        <Button color="primary"  disabled={!form.terms}>Sign In</Button>
       </FormGroup>
     </Form>
   );
